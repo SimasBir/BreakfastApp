@@ -1,0 +1,25 @@
+﻿Užduotis:
+• Sukurti .NET Core console application, kurioje „gaminsi“ pusryčius.
+• Pusryčiams valgysi kiaušinius su šonine ir kava/arbata, reikės:
+o išsikepti kiaušinių,
+o Išsikepti šoninės,
+o Paskrudinti skrebutį,
+o And skrebučio užtepti sviesto,
+o Išsivirti kavos.
+
+• Viską reikia paserviruoti – kiaušinius, šoninę ir skrebutį į lėkštę, kavą – įsipilti į puodelį. Sakykime, kad kavą verdi užpilamą (iš virdulio užpili maltas kavos pupeles),
+• Kiekvienas veiksmas užtrunka laiko, nesvarbu kiek – gali nuspręsti pats (tarkim kiaušinis iškepa per 5 sekundes, virdulys išverda per 3, t.t.),
+• Programa turi išspausdinti kiekvieno veiksmo tekstą („Warming the pan...“, „Cracking X eggs“, „Putting Y slices of bacon into the pan“), 
+baigusi darbą – „Breakfast is ready!“ bei kiek laiko užtruko pusryčių ruošimas (t.y. kiek laiko veikė programa po input įvedmo),
+• Programa turi priimti du input parametrus: kiek kiaušinių kepsi ir kiek šoninės riekelių kepsi. Edge cases turi būti covered, jeigu 0 – nereikia net šildyti keptuvės.
+Dabar techniniai niuansai:
+• Siūlau naudoti statines klases kiekvienam objektui (kavai, skrebučiui, kiaušiniui, šoninei, t.t.) ir turėti metodus (funkcijas), kurios užtrunka kažkiek laiko, 
+pvz.: PourCoffee(), atspausdina „Pouring coffee into cup“ ir užtrunka 0.5 sekundės. Trumpai tariant, klasė turi tik metodus, kurie spausdina tekstą ir užtrunka kažkiek laiko ir nieko daugiau.
+• Nesvarbu kiek detaliai aprašysi veiksmų seką, nereikia persistengti iki smulkmenų (užtenka „Pouring coffee into the cup“ vietoj „Openning cupboard“, „Taking out cup“, „Closing cupboard“, t.t.
+
+• Programa turi būti patalpinta į Github repozitoriją.
+• Repozitorija turi turėti du branchus!
+o Viename branche (sakykim main arba master branche) – išspręstas uždavinys,
+o Kitame branche – tas pats uždavinys tik su asinchronine implementacija (nesu tikras ar žinai ką reiškia asinchroniškumas, tai jeigu ką gali klausti, paaiškinsiu). 
+Jeigu nepavyks padaryti – nieko tokio, bet būtų labai gerai jeigu pavyktų.
+• Pliusas jeigu bus laikomasi coding conventions (https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions),
