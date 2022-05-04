@@ -7,4 +7,4 @@ services.ConfigureServices();
 var serviceProvider = services.BuildServiceProvider();
 var mainService = serviceProvider.GetService<MainService>();
 
-mainService.Execute();
+await mainService.ExecuteAsync();

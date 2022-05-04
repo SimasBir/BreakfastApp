@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BreakfastApp.Models.Food
+﻿namespace BreakfastApp.Models.Food
 {
     public static class Bacon
     {
-        public static int Make(int amount)
+        public static async Task<int> MakeAsync(int amount)
         {
             if (amount == 0)
             {
@@ -16,15 +10,15 @@ namespace BreakfastApp.Models.Food
             }
 
             int lenght = 0;
-            lenght += Cut(amount);
-            lenght += Cook(amount);
-            lenght += Serve(amount);
+            lenght += await Cut(amount);
+            lenght += await Cook(amount);
+            lenght += await Serve(amount);
             Console.WriteLine("~~~~");
 
             return lenght;
         }
 
-        private static int Cut(int amount)
+        private static async Task<int> Cut(int amount)
         {
             Console.WriteLine($"Cutting {(amount == 1 ? amount + " slice" : amount + " slices")} of bacon");
             int length = 500 * amount;
@@ -32,7 +26,7 @@ namespace BreakfastApp.Models.Food
             return length;
         }
 
-        private static int Cook(int amount)
+        private static async Task<int> Cook(int amount)
         {
             Console.WriteLine($"Cooking the bacon");
             int length = 1000;
@@ -40,7 +34,7 @@ namespace BreakfastApp.Models.Food
             return length;
         }
 
-        private static int Serve(int amount)
+        private static async Task<int> Serve(int amount)
         {
             Console.WriteLine($"Serving the bacon to plate");
             int length = 500;

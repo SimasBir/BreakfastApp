@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BreakfastApp.Models.Food
+﻿namespace BreakfastApp.Models.Food
 {
     public static class Coffee
     {
-        public static int Make()
+        public static async Task<int> MakeAsync()
         {            
             int lenght = 0;
 
-            lenght += BoilWater();
-            lenght += Brew();
-            lenght += Pour();
+            lenght += await BoilWater();
+            lenght += await Brew();
+            lenght += await Pour();
             Console.WriteLine("~~~~");
 
             return lenght;
         }
 
-        public static int BoilWater()
+        public static async Task<int> BoilWater()
         {
             Console.WriteLine("Boiling water in kettle");
             int length = 1500;
@@ -28,7 +22,7 @@ namespace BreakfastApp.Models.Food
             return length;
         }
 
-        public static int Brew()
+        public static async Task<int> Brew()
         {
             Console.WriteLine("Brewing coffee using filters");
             int length = 1500;
@@ -36,7 +30,7 @@ namespace BreakfastApp.Models.Food
             return length;
         }
 
-        public static int Pour()
+        public static async Task<int> Pour()
         {
             Console.WriteLine("Pouring coffee to cup");
             int length = 500;

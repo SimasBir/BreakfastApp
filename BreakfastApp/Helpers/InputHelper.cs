@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BreakfastApp.Helpers
+﻿namespace BreakfastApp.Helpers
 {
     public static class InputHelper
     {
-        public static int GetAmount(string item)
+        public static async Task<int> GetAmountAsync(string item)
         {
             int amount = 0;
             while (item != null)

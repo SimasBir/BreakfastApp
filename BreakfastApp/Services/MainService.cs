@@ -11,22 +11,22 @@ namespace BreakfastApp.Services
 {
     public class MainService
     {
-        public void Execute()
+        public async Task ExecuteAsync()
         {
             Console.WriteLine("Good morning, let's get ready for breakfast");
-            int eggAmount = InputHelper.GetAmount("eggs");
-            int baconAmount = InputHelper.GetAmount("bacon slices");
+            int eggAmount = await InputHelper.GetAmountAsync("eggs");
+            int baconAmount = await InputHelper.GetAmountAsync("bacon slices");
             Console.WriteLine("~~~~~~");
             double lenght = 0;
 
             if (eggAmount + baconAmount > 0)
             {
-                lenght += Stove.HeatUp();
-                lenght += Egg.Make(eggAmount);
-                lenght += Bacon.Make(baconAmount);
+                lenght += await Stove.HeatUpAsync();
+                lenght += await Egg.MakeAsync(eggAmount);
+                lenght += await Bacon.MakeAsync(baconAmount);
             }
-            lenght += Coffee.Make();
-            lenght += Toast.Make();
+            lenght += await Coffee.MakeAsync();
+            lenght += await Toast.MakeAsync();
 
             Console.WriteLine("Breakfast is ready!");
             Console.WriteLine($"Making breakfast took {lenght/1000} seconds");
