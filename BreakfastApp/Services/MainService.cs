@@ -1,11 +1,6 @@
 ﻿using BreakfastApp.Helpers;
 using BreakfastApp.Models.Food;
 using BreakfastApp.Models.Appliances;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BreakfastApp.Services
 {
