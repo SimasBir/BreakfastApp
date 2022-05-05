@@ -2,40 +2,33 @@
 {
     public static class Coffee
     {
-        public static int Make()
+        public static void Make()
         {            
-            int lenght = 0;
-
-            lenght += BoilWater();
-            lenght += Brew();
-            lenght += Pour();
+            BoilWater();
+            Brew();
+            Pour();
             Console.WriteLine("~~~~");
-
-            return lenght;
         }
 
-        public static int BoilWater()
+        public static void BoilWater()
         {
             Console.WriteLine("Boiling water in kettle");
             int length = 1500;
             Thread.Sleep(length);
-            return length;
         }
 
-        public static int Brew()
+        public static void Brew()
         {
             Console.WriteLine("Brewing coffee using filters");
             int length = 1500;
             Thread.Sleep(length);
-            return length;
         }
 
-        public static int Pour()
+        public static void Pour()
         {
             Console.WriteLine("Pouring coffee to cup");
             int length = 500;
             Thread.Sleep(length);
-            return length;
         }
     }
 }

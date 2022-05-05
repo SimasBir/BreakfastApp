@@ -2,40 +2,33 @@
 {
     public static class Toast
     {
-        public static int Make()
+        public static void Make()
         {
-            int lenght = 0;
-
-            lenght += Toaster();
-            lenght += Butter();
-            lenght += Serve();
+            Toaster();
+            Butter();
+            Serve();
             Console.WriteLine("~~~~");
-
-            return lenght;
         }
 
-        public static int Toaster()
+        public static void Toaster()
         {
             Console.WriteLine("Toasting sliced bread in toaster");
             int length = 2000;
             Thread.Sleep(length);
-            return length;
         }
 
-        public static int Butter()
+        public static void Butter()
         {
             Console.WriteLine("Buttering freshly toasted bread");
             int length = 1500;
             Thread.Sleep(length);
-            return length;
         }
 
-        public static int Serve()
+        public static void Serve()
         {
             Console.WriteLine("Serving toast to plate");
             int length = 500;
             Thread.Sleep(length);
-            return length;
         }
     }
 }

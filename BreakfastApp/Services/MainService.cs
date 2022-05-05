@@ -11,20 +11,22 @@ namespace BreakfastApp.Services
             Console.WriteLine("Good morning, let's get ready for breakfast");
             int eggAmount = InputHelper.GetAmount("eggs");
             int baconAmount = InputHelper.GetAmount("bacon slices");
+            var stopwatch = System.Diagnostics.Stopwatch.StartNew();
             Console.WriteLine("~~~~~~");
-            double lenght = 0;
 
             if (eggAmount + baconAmount > 0)
             {
-                lenght += Stove.HeatUp();
-                lenght += Egg.Make(eggAmount);
-                lenght += Bacon.Make(baconAmount);
+                Stove.HeatUp();
+                Egg.Make(eggAmount);
+                Bacon.Make(baconAmount);
             }
-            lenght += Coffee.Make();
-            lenght += Toast.Make();
+            Coffee.Make();
+            Toast.Make();
 
             Console.WriteLine("Breakfast is ready!");
-            Console.WriteLine($"Making breakfast took {lenght/1000} seconds");
+            stopwatch.Stop();
+
+            Console.WriteLine($"Making breakfast took {Math.Round(stopwatch.Elapsed.TotalSeconds,2)} seconds");
         }
     }
 }
